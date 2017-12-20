@@ -1,4 +1,6 @@
-FROM tiredofit/alpine:edge
+#FROM tiredofit/alpine:edge
+FROM pmoranga/tiredofit-alpine:latest
+# revert once pull request to tiredofit for alpine on ARM done
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Environment Variables
