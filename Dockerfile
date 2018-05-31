@@ -1,13 +1,12 @@
-FROM tiredofit/alpine:edge
-LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
+FROM pmoranga/tiredofit-alpine
+LABEL maintainer="Pedro Moranga (pmoranga at gmail dot com)"
 
 ### Environment Variables
-   ENV TINC_VERSION=1.1pre14
+   ENV TINC_VERSION=1.1pre15
 
 ### Dependencies Installation       
    RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
        apk update && \
-   
        BUILD_DEPS=" \
            autoconf \
            build-base \
@@ -26,7 +25,6 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
            tar \
            zlib-dev \
            " && \
-   
        apk add ${BUILD_DEPS} \
            ca-certificates \
            git \
@@ -35,7 +33,6 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
          openssl \
 	       readline \
    	     zlib && \
-                   
        mkdir /tmp/tinc && \
        curl http://www.tinc-vpn.org/packages/tinc-${TINC_VERSION}.tar.gz | tar xzvf - --strip 1 -C /tmp/tinc && \
        cd /tmp/tinc && \
