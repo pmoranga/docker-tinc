@@ -1,8 +1,8 @@
-FROM pmoranga/tiredofit-alpine
+FROM pmoranga/tiredofit-alpine:edge-2
 LABEL maintainer="Pedro Moranga (pmoranga at gmail dot com)"
 
 ### Environment Variables
-   ENV TINC_VERSION=1.1pre15
+   ENV TINC_VERSION=1.1pre16
 
 ### Dependencies Installation       
    RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
